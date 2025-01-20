@@ -11,16 +11,18 @@ const longoTemp = 900;
 const curtoTemp = 300;
 
 focoBtn.addEventListener('click', () => {
-    html.setAttribute('data-contexto', 'foco');
-    banner.setAttribute('src', './imagens/foco.png');
+    switchContext('foco');
 });
 
 curtoBtn.addEventListener('click', () => {
-    html.setAttribute('data-contexto', 'descanso-curto');
-    banner.setAttribute('src', './imagens/descanso-curto.png');
+    switchContext('descanso-curto');
 });
 
 longoBtn.addEventListener('click', () => {
-    html.setAttribute('data-contexto', 'descanso-longo');
-    banner.setAttribute('src', './imagens/descanso-longo.png');
+    switchContext('descanso-longo');
 });
+
+function switchContext(contexto) {
+    html.setAttribute('data-contexto', contexto);
+    banner.setAttribute('src', `/imagens/${contexto}.png`);
+}
